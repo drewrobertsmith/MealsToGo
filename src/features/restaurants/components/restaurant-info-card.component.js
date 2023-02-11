@@ -12,7 +12,7 @@ import {
   Info,
   RatingAndOpen,
   Rating,
-  OpenSign
+  OpenSign,
 } from "./restaurant-info-card.styles";
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
@@ -43,9 +43,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
           </Rating>
           <OpenSign>
             {isClosedTemporarily && (
-              <Text variant="error">
-                CLOSED TEMPORARILY
-              </Text>
+              <Text variant="error">CLOSED TEMPORARILY</Text>
             )}
             <Spacer position="left" size="large">
               {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
