@@ -43,6 +43,7 @@ const createScreenOptions = ({ route }) => {
     tabBarIcon: ({ size, color }) => (
       <Ionicons name={iconName} size={size} color={color} />
     ),
+    headerShown: false,
   };
 };
 
@@ -67,7 +68,6 @@ export default function App() {
             screenOptions={createScreenOptions}
             tabBarOptions={{
               tabBarActiveTintColor: theme.colors.brand.primary,
-              headerShown: false,
             }}
           >
             <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
