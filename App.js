@@ -13,6 +13,14 @@ import { Ionicons } from "@expo/vector-icons";
 import { View, Text } from "react-native";
 import { SafeArea } from "./src/components/utility/safe-area.component";
 
+const Tab = createBottomTabNavigator();
+
+const TAB_ICON = {
+  Restaurants: "restaurant",
+  Map: "map",
+  Settings: "ios-settings",
+};
+
 const SettingsScreen = () => {
   return (
     <SafeArea>
@@ -29,7 +37,14 @@ const MapScreen = () => {
   );
 };
 
-const Tab = createBottomTabNavigator();
+const createScreenOptions = ({ route }) => {
+  const iconName = TAB_ICON[route.name];
+  return {
+    tabBarIcon: ({ size, color }) => (
+      <Ionicons name={iconName} size={size} color={color} />
+    ),
+  };
+};
 
 export default function App() {
   const [oswaldLoaded] = useOswald({
@@ -49,23 +64,11 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <NavigationContainer>
           <Tab.Navigator
-            screenOptions={({ route }) => ({
-              tabBarIcon: ({ focused, color, size }) => {
-                let iconName;
-
-                if (route.name === "Restaurants") {
-                  iconName = focused ? "restaurant" : "restaurant-outline";
-                } else if (route.name === "Map") {
-                  iconName = focused ? "map" : "map-outline";
-                } else if (route.name === "Settings") {
-                  iconName = focused ? "ios-settings" : "ios-settings-outline";
-                }
-                return <Ionicons name={iconName} size={size} color={color} />;
-              },
+            screenOptions={createScreenOptions}
+            tabBarOptions={{
               tabBarActiveTintColor: theme.colors.brand.primary,
-              tabBarInactiveTintColor: theme.colors.brand.secondary,
               headerShown: false,
-            })}
+            }}
           >
             <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
             <Tab.Screen name="Map" component={MapScreen} />
