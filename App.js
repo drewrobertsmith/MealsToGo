@@ -9,6 +9,7 @@ import {
   Oswald_400Regular,
 } from "@expo-google-fonts/oswald";
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
+import { Ionicons } from "@expo/vector-icons";
 import { View, Text } from "react-native";
 import { SafeArea } from "./src/components/utility/safe-area.component";
 
@@ -18,7 +19,7 @@ const SettingsScreen = () => {
       <Text>Settings!</Text>
     </SafeArea>
   );
-}
+};
 
 const MapScreen = () => {
   return (
@@ -26,7 +27,7 @@ const MapScreen = () => {
       <Text>Maps!</Text>
     </SafeArea>
   );
-}
+};
 
 const Tab = createBottomTabNavigator();
 
@@ -48,7 +49,23 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <NavigationContainer>
           <Tab.Navigator
-            screenOptions={{ headerShown: false }}
+            screenOptions={({ route }) => ({
+              tabBarIcon: ({ focused, color, size }) => {
+                let iconName;
+
+                if (route.name === "Restaurants") {
+                  iconName = focused ? "restaurant" : "restaurant-outline";
+                } else if (route.name === "Map") {
+                  iconName = focused ? "map" : "map-outline";
+                } else if (route.name === "Settings") {
+                  iconName = focused ? "ios-settings" : "ios-settings-outline";
+                }
+                return <Ionicons name={iconName} size={size} color={color} />;
+              },
+              tabBarActiveTintColor: theme.colors.brand.primary,
+              tabBarInactiveTintColor: theme.colors.brand.secondary,
+              headerShown: false,
+            })}
           >
             <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
             <Tab.Screen name="Map" component={MapScreen} />
@@ -57,7 +74,6 @@ export default function App() {
         </NavigationContainer>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
-
     </>
   );
 }
