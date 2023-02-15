@@ -1,7 +1,8 @@
-import { mocks } from "./mock";
+import { mockImages, mocks } from "./mock";
 import camelize from "camelize";
 
-export const restaurantRequest = (location = "41.878113,-87.629799") => {
+//This requests the restauarnt data from API via Promise
+export const restaurantsRequest = (location = "41.878113,-87.629799") => {
   return new Promise((resolve, reject) => {
     const mock = mocks[location];
     if (!mock) {
@@ -11,8 +12,12 @@ export const restaurantRequest = (location = "41.878113,-87.629799") => {
   });
 };
 
-export const restaurantTransform = ({ results = [] }) => {
+//this maps and transforms the results: camelcasing everything for consistency and mapping isOpenNow & isClosedTemporarily, which we need, but the api doesnt exactly provide
+export const restaurantsTransform = ({ results = [] }) => {
   const mappedResults = results.map((restaurant) => {
+    restaurant.photos = restaurant.photos.map((p) => {
+      return mockImages[Math.ceil(Math.random() * (mockImages.length - 1))];
+    });
     return {
       ...restaurant,
       isOpenNow: restaurant.opening_hours && restaurant.opening_hours.open_now,
