@@ -3,11 +3,13 @@ export const locations = {
     results: [
       {
         geometry: {
+          //this location object allows us to find the city we are trying to get restaurants for
           location: {
             lng: 4.402464,
             lat: 51.219448,
           },
           viewport: {
+            // this object helps us render out the map view
             northeast: {
               lat: 51.2145994302915,
               lng: 4.418074130291502,
