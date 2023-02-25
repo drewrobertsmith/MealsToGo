@@ -1,7 +1,7 @@
 import { mockImages, mocks } from "./mock";
 import camelize from "camelize";
 
-//This requests the restauarnt data from API via Promise
+//This requests the restauarnt data from API via Promise, current using mock data
 export const restaurantsRequest = (location = "41.878113,-87.629799") => {
   return new Promise((resolve, reject) => {
     const mock = mocks[location];
