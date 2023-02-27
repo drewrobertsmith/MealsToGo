@@ -26,6 +26,7 @@ export default function App() {
 
   return (
     <>
+      <ExpoStatusBar style="auto" />
       <ThemeProvider theme={theme}>
         <LocationContextProvider>
           <RestaurantsContextProvider>
@@ -33,7 +34,6 @@ export default function App() {
           </RestaurantsContextProvider>
         </LocationContextProvider>
       </ThemeProvider>
-      <ExpoStatusBar style="auto" />
     </>
   );
 }
