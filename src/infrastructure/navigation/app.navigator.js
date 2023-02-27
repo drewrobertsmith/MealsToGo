@@ -10,50 +10,48 @@ import { theme } from "../../infrastructure/theme";
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
-    Restaurants: "restaurant",
-    Map: "map",
-    Settings: "ios-settings",
+  Restaurants: "restaurant",
+  Map: "map",
+  Settings: "ios-settings",
 };
 
 const SettingsScreen = () => {
-    return (
-        <SafeArea>
-            <Text>Settings!</Text>
-        </SafeArea>
-    );
+  return (
+    <SafeArea>
+      <Text>Settings!</Text>
+    </SafeArea>
+  );
 };
 
 const MapScreen = () => {
-    return (
-        <SafeArea>
-            <Text>Maps!</Text>
-        </SafeArea>
-    );
+  return (
+    <SafeArea>
+      <Text>Maps!</Text>
+    </SafeArea>
+  );
 };
 
 const createScreenOptions = ({ route }) => {
-    const iconName = TAB_ICON[route.name];
-    return {
-        tabBarIcon: ({ size, color }) => (
-            <Ionicons name={iconName} size={size} color={color} />
-        ),
-        //this is the only place I could make hiding the header work
-        headerShown: false,
-    };
+  const iconName = TAB_ICON[route.name];
+  return {
+    tabBarIcon: ({ size, color }) => (
+      <Ionicons name={iconName} size={size} color={color} />
+    ),
+    headerShown: false,
+  };
 };
 
 export const AppNavigator = () => (
-    <NavigationContainer>
-        <Tab.Navigator
-            screenOptions={createScreenOptions}
-            tabBarOptions={{
-                tabBarActiveTintColor: theme.colors.brand.primary,
-            }}
-        >
-            <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
-            <Tab.Screen name="Map" component={MapScreen} />
-            <Tab.Screen name="Settings" component={SettingsScreen} />
-        </Tab.Navigator>
-    </NavigationContainer>
-
+  <NavigationContainer>
+    <Tab.Navigator
+      screenOptions={createScreenOptions}
+      tabBarOptions={{
+        tabBarActiveTintColor: theme.colors.brand.primary,
+      }}
+    >
+      <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
+      <Tab.Screen name="Map" component={MapScreen} />
+      <Tab.Screen name="Settings" component={SettingsScreen} />
+    </Tab.Navigator>
+  </NavigationContainer>
 );

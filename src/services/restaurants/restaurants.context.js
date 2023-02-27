@@ -40,8 +40,8 @@ export const RestaurantsContextProvider = ({ children }) => {
     }
   }, [location]);
 
+  //this is what enables the restauarants to appear at any level via the context provider that wraps the entire <NavigationContainer> ... in effect it controls the output of the screen
   return (
-    //this restaurants array is what enables the restauarants to appear at any level via the context provider that wraps the entire <NavigationContainer> ... in effect it controls the output of the screen
     <RestaurantsContext.Provider
       value={{
         restaurants,

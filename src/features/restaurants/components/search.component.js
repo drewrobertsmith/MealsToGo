@@ -8,10 +8,10 @@ const SearchContainer = styled.View`
   background-color: ${(props) => props.theme.colors.bg.secondary};
 `;
 
+//this one only needs to know once you submit the keyword to be. Location Context only stores the keyword, once we run teh search function. Triggering a search triggers and update in the Location Context
+//tracking local state cause the search component needs to be able to track what search keyword is being filled in
 export const Search = () => {
-  //this one only needs to know once you submit the keyword to be. Location Context only stores the keyword, once we run teh search function. Triggering a search triggers and update in the Location Context
   const { keyword, search } = useContext(LocationContext);
-  //tracking local state cause the search component needs to be able to track what search keyword is being filled in
   const [searchKeyword, setSearchKeyword] = useState(keyword);
 
   return (

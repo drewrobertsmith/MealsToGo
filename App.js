@@ -10,7 +10,6 @@ import { RestaurantsContextProvider } from "./src/services/restaurants/restauran
 import { LocationContextProvider } from "./src/services/location/location.context";
 import { Navigation } from "./src/infrastructure/navigation";
 
-
 export default function App() {
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
