@@ -1,11 +1,14 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components/native";
 import { Searchbar } from "react-native-paper";
 import { LocationContext } from "../../../services/location/location.context";
 
 const SearchContainer = styled.View`
   padding: ${(props) => props.theme.space[3]};
-  background-color: ${(props) => props.theme.colors.bg.secondary};
+  position: absolute;
+  z-index: 1;
+  top: ${(props) => props.theme.space[4]};
+  width: 100%;
 `;
 
 //this one only needs to know once you submit the keyword to be. Location Context only stores the keyword, once we run teh search function. Triggering a search triggers and update in the Location Context
@@ -21,6 +24,7 @@ export const Search = () => {
     <SearchContainer>
       <Searchbar
         placeholder="Search"
+        icon="map"
         value={searchKeyword}
         onSubmitEditing={() => {
           search(searchKeyword);
