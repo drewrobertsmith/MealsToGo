@@ -10,7 +10,7 @@ const SearchContainer = styled.View`
 
 //this one only needs to know once you submit the keyword to be. Location Context only stores the keyword, once we run teh search function. Triggering a search triggers and update in the Location Context
 //tracking local state cause the search component needs to be able to track what search keyword is being filled in
-export const Search = () => {
+export const Search = ({ isFavoritesToggled, onFavoritesToggle }) => {
   const { keyword, search } = useContext(LocationContext);
   const [searchKeyword, setSearchKeyword] = useState(keyword);
   useEffect(() => {
@@ -20,6 +20,8 @@ export const Search = () => {
   return (
     <SearchContainer>
       <Searchbar
+        icon={isFavoritesToggled ? "heart" : "heart-outline"}
+        onIconPress={onFavoritesToggle}
         placeholder="Search"
         value={searchKeyword}
         onSubmitEditing={() => {
