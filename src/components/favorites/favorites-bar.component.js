@@ -15,35 +15,35 @@ const EmptyFavoritesStateText = styled.Text`
 `;
 
 export const FavoritesBar = ({ favorites, onNavigate }) => {
-    if (!favorites.length) {
-        return (
-            <EmptyFavoritesStateText>
-                Add a restaurant by tapping the heart icon!
-            </EmptyFavoritesStateText>
-        );
-    }
-
+  if (!favorites.length) {
     return (
-        <FavoritesWrapper>
-            <Text variant="caption">Favorites</Text>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                {favorites.map((restaurant) => {
-                    const key = restaurant.name;
-                    return (
-                        <FavoritesItemView key={key}>
-                            <TouchableOpacity
-                                onPress={() =>
-                                    onNavigate("Restaurant Detail", {
-                                        restaurant,
-                                    })
-                                }
-                            >
-                                <CompactRestaurantInfo restaurant={restaurant} />
-                            </TouchableOpacity>
-                        </FavoritesItemView>
-                    );
-                })}
-            </ScrollView>
-        </FavoritesWrapper>
+      <EmptyFavoritesStateText>
+        Add a restaurant by tapping the heart icon!
+      </EmptyFavoritesStateText>
     );
+  }
+
+  return (
+    <FavoritesWrapper>
+      <Text variant="caption">Favorites</Text>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+        {favorites.map((restaurant) => {
+          const key = restaurant.name;
+          return (
+            <FavoritesItemView key={key}>
+              <TouchableOpacity
+                onPress={() =>
+                  onNavigate("Restaurant Detail", {
+                    restaurant,
+                  })
+                }
+              >
+                <CompactRestaurantInfo restaurant={restaurant} />
+              </TouchableOpacity>
+            </FavoritesItemView>
+          );
+        })}
+      </ScrollView>
+    </FavoritesWrapper>
+  );
 };
