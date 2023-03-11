@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext } from "react";
 
 import { locationRequest, locationTransform } from "./location.service";
 
 //creates the context
-export const LocationContext = React.createContext();
+export const LocationContext = createContext();
 
 export const LocationContextProvider = ({ children }) => {
   const [keyword, setKeyword] = useState("Chicago");
