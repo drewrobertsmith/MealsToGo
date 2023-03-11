@@ -26,14 +26,14 @@ const CompactWebView = styled(WebView)`
 //check if on android
 const isAndroid = Platform.OS === "android";
 export const CompactRestaurantInfo = ({ restaurant }) => {
-    //if on android show webview, otherwise view cuz android madness
-    const Image = isAndroid ? CompactWebView : CompactImage;
-    return (
-        <Item>
-            <Image source={{ uri: restaurant.photos[0] }} />
-            <Text center variant="caption" numberOfLines={3}>
-                {restaurant.name}
-            </Text>
-        </Item>
-    );
+  //if on android show webview, otherwise view cuz android madness
+  const Image = isAndroid ? CompactWebView : CompactImage;
+  return (
+    <Item>
+      <Image source={{ uri: restaurant.photos[0] }} />
+      <Text center variant="caption" numberOfLines={3}>
+        {restaurant.name}
+      </Text>
+    </Item>
+  );
 };
