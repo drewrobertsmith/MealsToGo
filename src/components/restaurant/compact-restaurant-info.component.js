@@ -25,9 +25,9 @@ const CompactWebView = styled(WebView)`
 
 //check if on android
 const isAndroid = Platform.OS === "android";
-export const CompactRestaurantInfo = ({ restaurant }) => {
+export const CompactRestaurantInfo = ({ restaurant, isMap }) => {
   //if on android show webview, otherwise view cuz android madness
-  const Image = isAndroid ? CompactWebView : CompactImage;
+  const Image = isAndroid && isMap ? CompactWebView : CompactImage;
   return (
     <Item>
       <Image source={{ uri: restaurant.photos[0] }} />
