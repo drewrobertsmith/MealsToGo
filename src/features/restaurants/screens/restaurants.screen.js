@@ -1,11 +1,15 @@
 import React, { useContext } from "react";
+import { ActivityIndicator } from "react-native-paper";
+import { SafeArea } from "../../../components/utility/safe-area.component";
+
 import { FlatList, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
+
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
-import { SafeArea } from "../../../components/utility/safe-area.component";
-import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
-import { ActivityIndicator } from "react-native-paper";
 import { Search } from "../components/search.component";
+
+import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
+import { FavoritesContext } from "../../../services/favorites/favorites.context";
 
 const RestaurantList = styled(FlatList).attrs({
   contentContainerStyle: {
