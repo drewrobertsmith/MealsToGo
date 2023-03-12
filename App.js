@@ -1,6 +1,14 @@
-import { initializeApp } from "firebase/app";
+import React, { useState, useEffect } from "react";
+
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { Navigation } from "./src/infrastructure/navigation";
+
+import { initializeApp } from "firebase/app";
+import {
+  getAuth,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
@@ -14,7 +22,7 @@ import { RestaurantsContextProvider } from "./src/services/restaurants/restauran
 import { LocationContextProvider } from "./src/services/location/location.context";
 import { FavoritesContextProvider } from "./src/services/favorites/favorites.context";
 
-// Initialize Firebase
+// Firebase Configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBq5x17EDjG930x94YWhs1scF-48Aitrhw",
   authDomain: "mealstogo-eb46a.firebaseapp.com",
@@ -24,9 +32,20 @@ const firebaseConfig = {
   appId: "1:42832315318:web:beb67a4baee7ef8c593717",
 };
 
+//Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
 export default function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  useEffect(() => {
+    signInWithEmailAndPassword(auth, "drew.robert.smith@gmail.com", "ds2023DS!")
+      .then((user) => {
+        setIsAuthenticated(true);
+      })
+      .catch((e) => {});
+  }, []);
+
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
   });
@@ -39,6 +58,9 @@ export default function App() {
     return null;
   }
 
+  if (!isAuthenticated) {
+    return null;
+  }
   return (
     <>
       <ExpoStatusBar style="auto" />
