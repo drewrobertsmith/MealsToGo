@@ -1,14 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+
+import { initializeApp } from "firebase/app";
 
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { Navigation } from "./src/infrastructure/navigation";
-
-import { initializeApp } from "firebase/app";
-import {
-  getAuth,
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
 
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
@@ -21,6 +16,7 @@ import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
 import { LocationContextProvider } from "./src/services/location/location.context";
 import { FavoritesContextProvider } from "./src/services/favorites/favorites.context";
+import { AuthenticationContextProvider } from "./src/services/authentication/authentication.context";
 
 // Firebase Configuration
 const firebaseConfig = {
@@ -33,19 +29,9 @@ const firebaseConfig = {
 };
 
 //Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+const firebaseApp = initializeApp(firebaseConfig);
 
 export default function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  useEffect(() => {
-    signInWithEmailAndPassword(auth, "drew.robert.smith@gmail.com", "ds2023DS!")
-      .then((user) => {
-        setIsAuthenticated(true);
-      })
-      .catch((e) => {});
-  }, []);
-
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
   });
@@ -58,20 +44,19 @@ export default function App() {
     return null;
   }
 
-  if (!isAuthenticated) {
-    return null;
-  }
   return (
     <>
       <ExpoStatusBar style="auto" />
       <ThemeProvider theme={theme}>
-        <FavoritesContextProvider>
-          <LocationContextProvider>
-            <RestaurantsContextProvider>
-              <Navigation />
-            </RestaurantsContextProvider>
-          </LocationContextProvider>
-        </FavoritesContextProvider>
+        <AuthenticationContextProvider>
+          <FavoritesContextProvider>
+            <LocationContextProvider>
+              <RestaurantsContextProvider>
+                <Navigation />
+              </RestaurantsContextProvider>
+            </LocationContextProvider>
+          </FavoritesContextProvider>
+        </AuthenticationContextProvider>
       </ThemeProvider>
     </>
   );
