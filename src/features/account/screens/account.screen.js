@@ -1,31 +1,43 @@
 import React from "react";
 import { View, Text } from "react-native";
 import {
-    AccountBackground,
-    AccountCover,
-    AccountStatusBar,
+  AccountBackground,
+  AccountContainer,
+  AccountCover,
+  AccountStatusBar,
+  AuthButton,
 } from "../components/account.styles";
 import { SafeArea } from "../../../components/utility/safe-area.component";
-import { StatusBar } from "react-native";
 
-export const AccountScreen = () => {
-    return (
-        <>
-            <AccountStatusBar />
-            <AccountBackground>
-                <AccountCover />
-                <SafeArea>
-                    <Text
-                        style={{
-                            color: "white",
-                            fontSize: 30,
-                            textAlign: "center",
-                        }}
-                    >
-                        Account Screen!!
-                    </Text>
-                </SafeArea>
-            </AccountBackground>
-        </>
-    );
+export const AccountScreen = ({ navigation }) => {
+  return (
+    <>
+      <AccountStatusBar />
+      <AccountBackground>
+        <AccountCover />
+        <SafeArea
+          style={{
+            justifyContent: "center",
+          }}
+        >
+          <AccountContainer>
+            <AuthButton
+              icon="lock-open-outline"
+              mode="contained"
+              onPress={() => navigation.navigate("Login")}
+            >
+              Login
+            </AuthButton>
+            <AuthButton
+              icon="lock-open-outline"
+              mode="contained"
+              onPress={() => navigation.navigate("Register")}
+            >
+              Register
+            </AuthButton>
+          </AccountContainer>
+        </SafeArea>
+      </AccountBackground>
+    </>
+  );
 };
