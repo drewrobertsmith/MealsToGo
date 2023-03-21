@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { Button } from "react-native-paper";
+import { Button, TextInput } from "react-native-paper";
 
 export const AccountBackground = styled.ImageBackground.attrs({
   source: {
@@ -16,21 +16,30 @@ export const AccountStatusBar = styled.StatusBar.attrs({
 })``;
 
 export const AccountCover = styled.View`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
 `;
 
 export const AccountContainer = styled.View`
-  padding: ${(props) => props.theme.space[4]};
-  margin-top: ${(props) => props.theme.space[2]};
+    
+    padding: ${(props) => props.theme.space[4]};
+    margin-top: ${(props) => props.theme.space[2]};
 `;
+
 
 export const AuthButton = styled(Button).attrs({
   buttonColor: "#16161D",
+
 })`
-  margin: ${(props) => props.theme.space[2]};
-  padding: ${(props) => props.theme.space[1]};
-  width: 100%;
+    margin: ${(props) => props.theme.space[2]};
+    padding: ${(props) => props.theme.space[1]};
+    width: 300px;
+`;
+
+export const LoginInput = styled(TextInput).attrs({
+  autoCapitalize: "none",
+})`
+    width: 300px;
 `;
