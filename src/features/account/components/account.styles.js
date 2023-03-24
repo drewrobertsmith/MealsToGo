@@ -7,25 +7,24 @@ export const AccountBackground = styled.ImageBackground.attrs({
   },
 })`
   flex: 1;
-  align-items: center;
-  justify-content: center;
 `;
 
 export const AccountStatusBar = styled.StatusBar.attrs({
   barStyle: "light-content",
 })``;
 
-export const AccountCover = styled.View`
-    position: absolute;
+export const AccountCover = styled.View`  
+  position: absolute;
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.1);
 `;
 
 export const AccountContainer = styled.View`
-    
     padding: ${(props) => props.theme.space[4]};
     margin-top: ${(props) => props.theme.space[2]};
+    flex: 1;
+    justify-content: center;
 `;
 
 
@@ -33,13 +32,11 @@ export const AuthButton = styled(Button).attrs({
   buttonColor: "#16161D",
 
 })`
-    margin: ${(props) => props.theme.space[2]};
-    padding: ${(props) => props.theme.space[1]};
-    width: 300px;
+   padding: ${(props) => props.theme.space[2]};
+   margin: ${(props) => props.theme.space[1]};
 `;
 
 export const LoginInput = styled(TextInput).attrs({
   autoCapitalize: "none",
 })`
-    width: 300px;
 `;

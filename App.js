@@ -4,6 +4,7 @@ import React from "react";
 
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { Navigation } from "./src/infrastructure/navigation";
+import { RootSiblingParent } from "react-native-root-siblings";
 
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
@@ -48,15 +49,17 @@ export default function App() {
     <>
       <ExpoStatusBar style="auto" />
       <ThemeProvider theme={theme}>
-        <AuthenticationContextProvider>
-          <FavoritesContextProvider>
-            <LocationContextProvider>
-              <RestaurantsContextProvider>
-                <Navigation />
-              </RestaurantsContextProvider>
-            </LocationContextProvider>
-          </FavoritesContextProvider>
-        </AuthenticationContextProvider>
+        <RootSiblingParent>
+          <AuthenticationContextProvider>
+            <FavoritesContextProvider>
+              <LocationContextProvider>
+                <RestaurantsContextProvider>
+                  <Navigation />
+                </RestaurantsContextProvider>
+              </LocationContextProvider>
+            </FavoritesContextProvider>
+          </AuthenticationContextProvider>
+        </RootSiblingParent>
       </ThemeProvider>
     </>
   );

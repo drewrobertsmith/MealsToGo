@@ -1,4 +1,5 @@
 import React from "react";
+import { View } from "react-native";
 import {
   AccountBackground,
   AccountContainer,
@@ -7,6 +8,7 @@ import {
   AuthButton,
 } from "../components/account.styles";
 import { SafeArea } from "../../../components/utility/safe-area.component";
+import { Spacer } from "../../../components/spacer/spacer.component";
 
 export const AccountScreen = ({ navigation }) => {
   return (
@@ -14,28 +16,22 @@ export const AccountScreen = ({ navigation }) => {
       <AccountStatusBar />
       <AccountBackground>
         <AccountCover />
-        <SafeArea
-          style={{
-            justifyContent: "center",
-          }}
-        >
-          <AccountContainer>
-            <AuthButton
-              icon="lock-open-outline"
-              mode="contained"
-              onPress={() => navigation.navigate("Login")}
-            >
-              Login
-            </AuthButton>
-            <AuthButton
-              icon="lock-open-outline"
-              mode="contained"
-              onPress={() => navigation.navigate("Register")}
-            >
-              Register
-            </AuthButton>
-          </AccountContainer>
-        </SafeArea>
+        <AccountContainer>
+          <AuthButton
+            icon="email"
+            mode="contained"
+            onPress={() => navigation.navigate("Login")}
+          >
+            Login
+          </AuthButton>
+          <AuthButton
+            icon="lock-open-outline"
+            mode="contained"
+            onPress={() => navigation.navigate("Register")}
+          >
+            Register
+          </AuthButton>
+        </AccountContainer>
       </AccountBackground>
     </>
   );
