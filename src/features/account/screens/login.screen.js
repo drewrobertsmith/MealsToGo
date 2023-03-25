@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 
 import {
   AccountBackground,
@@ -17,7 +17,6 @@ export const LoginScreen = () => {
   const { onLogin, error } = useContext(AuthenticationContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  console.log(error);
 
   return (
     <>
@@ -38,7 +37,6 @@ export const LoginScreen = () => {
               onChangeText={setPassword}
               textContentType="password"
               secureTextEntry
-              secure
             />
             {error && (
               <Spacer position="top" size="large">

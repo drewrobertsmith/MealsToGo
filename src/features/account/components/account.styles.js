@@ -45,3 +45,13 @@ export const ErrorContainer = styled.View`
   margin-bottom: ${(props) => props.theme.space[2]};
   background-color: #ffffff;
 `;
+
+export const LoginTitle = styled.Text`
+  font-size: ${(props) => props.theme.fontSizes.h4};
+`;
+
+export const RegisterInput = styled(TextInput).attrs({
+
+})`
+  margin: ${(props) => props.theme.space[1]};
+`;
