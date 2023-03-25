@@ -1,4 +1,8 @@
-import { signInWithEmailAndPassword, getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  signInWithEmailAndPassword,
+  getAuth,
+  createUserWithEmailAndPassword,
+} from "firebase/auth";
 import { initializeApp } from "firebase/app";
 
 // Firebase Configuration

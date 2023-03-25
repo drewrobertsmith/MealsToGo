@@ -21,7 +21,7 @@ export const AuthenticationContextProvider = ({ children }) => {
 
   const onRegister = (email, password, repeatedPassword) => {
     if (password !== repeatedPassword) {
-      setError("Error: Passwords do not match")
+      setError("Error: Passwords do not match");
       return;
     }
     registerRequest(email, password)
@@ -34,8 +34,6 @@ export const AuthenticationContextProvider = ({ children }) => {
         setIsLoading(false);
       });
   };
-
-
 
   return (
     <AuthenticationContext.Provider
