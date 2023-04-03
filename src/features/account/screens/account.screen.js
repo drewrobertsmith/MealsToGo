@@ -1,14 +1,12 @@
 import React from "react";
-import { View } from "react-native";
 import {
   AccountBackground,
   AccountContainer,
   AccountCover,
   AccountStatusBar,
   AuthButton,
+  AccountAnimation,
 } from "../components/account.styles";
-import { SafeArea } from "../../../components/utility/safe-area.component";
-import { Spacer } from "../../../components/spacer/spacer.component";
 
 export const AccountScreen = ({ navigation }) => {
   return (
@@ -17,6 +15,7 @@ export const AccountScreen = ({ navigation }) => {
       <AccountBackground>
         <AccountCover />
         <AccountContainer>
+          <AccountAnimation />
           <AuthButton
             icon="email"
             mode="contained"

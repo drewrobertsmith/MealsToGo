@@ -1,5 +1,16 @@
 import styled from "styled-components/native";
 import { Button, TextInput } from "react-native-paper";
+import LottieView from "lottie-react-native";
+
+export const AccountAnimation = styled(LottieView).attrs({
+  source: require("../../../../assets/animation/69733-food-beverage.json"),
+  autoPlay: true,
+  loop: false,
+})`
+  width: 400px;
+  align-self: center;
+  margin-bottom: ${(props) => props.theme.space[4]};
+`;
 
 export const AccountBackground = styled.ImageBackground.attrs({
   source: {
