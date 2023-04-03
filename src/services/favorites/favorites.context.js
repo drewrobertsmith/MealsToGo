@@ -1,27 +1,30 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect, useContext } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+
+import { AuthenticationContext } from "../authentication/authentication.context";
 
 export const FavoritesContext = createContext();
 
 export const FavoritesContextProvider = ({ children }) => {
+  const { user } = useContext(AuthenticationContext);
   const [favorites, setFavorites] = useState([]); //set to empty array because we dont have favorites when we boot the app
 
   //adding AsyncStorage to store favorites locally on device
 
   //store the data
-  const saveFavorites = async (value) => {
+  const saveFavorites = async (value, uid) => {
     try {
       const jsonValue = JSON.stringify(value);
-      await AsyncStorage.setItem("@favorites", jsonValue);
+      await AsyncStorage.setItem(`@favorites-${uid}`, jsonValue);
     } catch (e) {
       console.log("error storing", e);
     }
   };
 
   //read the data
-  const loadFavorites = async () => {
+  const loadFavorites = async (uid) => {
     try {
-      const value = await AsyncStorage.getItem("@favorites");
+      const value = await AsyncStorage.getItem(`@favorites-${uid}`);
       if (value !== null) {
         setFavorites(JSON.parse(value));
       }
@@ -45,13 +48,17 @@ export const FavoritesContextProvider = ({ children }) => {
 
   //load favorites everytime on the very first mount of context, load initial favorites
   useEffect(() => {
-    loadFavorites();
-  }, []);
+    if (user && user.uid) {
+      loadFavorites(user.uid);
+    }
+  }, [user]); //user is the dependency
 
   //every time there is a change to favorites, save the change
   useEffect(() => {
-    saveFavorites(favorites);
-  }, [favorites]);
+    if (user && user.uid && favorites.length) {
+      saveFavorites(favorites, user.uid);
+    }
+  }, [favorites, user]); //user is the dependency along with favorites
 
   return (
     //provide provider with value(s) its going to provide externally

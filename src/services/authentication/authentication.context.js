@@ -8,7 +8,6 @@ export const AuthenticationContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [error, setError] = useState([]);
 
-
   //this is setting the authentication state observer, which i would ultimately like to move to the authentication service but I cannot figure out how to properly export and write a function in that manner. Thus; i am importing getAuth and onAuthStateChange from firebase/auth
   const auth = getAuth();
   onAuthStateChanged(auth, (usr) => {
@@ -19,7 +18,6 @@ export const AuthenticationContextProvider = ({ children }) => {
       setIsLoading(false);
     }
   });
-
 
   //Login Function that calls the auth service
   const onLogin = (email, password) => {
@@ -34,11 +32,11 @@ export const AuthenticationContextProvider = ({ children }) => {
       });
   };
 
-  //New User Function that calls the auth service 
+  //New User Function that calls the auth service
   const onRegister = (email, password, repeatedPassword) => {
-    setIsLoading(true)
+    setIsLoading(true);
     if (password !== repeatedPassword) {
-      setError("Error: Passwords do not match")
+      setError("Error: Passwords do not match");
       return;
     }
     registerRequest(email, password)
@@ -52,7 +50,6 @@ export const AuthenticationContextProvider = ({ children }) => {
       });
   };
 
-
   //this is the logout function
   const onLogout = () => {
     setUser(null);
@@ -64,8 +61,6 @@ export const AuthenticationContextProvider = ({ children }) => {
         console.log(e);
       });
   };
-
-
 
   return (
     <AuthenticationContext.Provider
