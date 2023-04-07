@@ -27,10 +27,10 @@ export const SettingsScreen = ({ navigation }) => {
       </AvatorContainer>
       <List.Section>
         <SettingsItem
-          title="Favorites"
+          title="My Favorites"
           description="View your saved favorites"
           left={(props) => <List.Icon {...props} color="black" icon="heart" />}
-          onPress={() => navigation.navigate("Favorites")}
+          onPress={() => navigation.navigate("My Favorites")}
         />
         <SettingsItem
           title="Logout"
