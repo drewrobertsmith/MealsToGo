@@ -52,6 +52,7 @@ export const RestaurantsScreen = ({ navigation }) => {
         data={restaurants}
         renderItem={({ item }) => {
           return (
+            //TODO: change out the touchable opacity to pressable API so there isnt a weird box underlay
             <TouchableOpacity
               onPress={() =>
                 navigation.navigate("Restaurant Detail", {
