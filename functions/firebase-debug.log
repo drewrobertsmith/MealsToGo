@@ -1,0 +1,152 @@
+[debug] [2023-04-10T17:39:46.136Z] ----------------------------------------------------------------------
+[debug] [2023-04-10T17:39:46.136Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:start --only functions
+[debug] [2023-04-10T17:39:46.137Z] CLI Version:   11.25.3
+[debug] [2023-04-10T17:39:46.137Z] Platform:      darwin
+[debug] [2023-04-10T17:39:46.137Z] Node Version:  v18.13.0
+[debug] [2023-04-10T17:39:46.137Z] Time:          Mon Apr 10 2023 12:39:46 GMT-0500 (Central Daylight Time)
+[debug] [2023-04-10T17:39:46.138Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-04-10T17:39:46.195Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-04-10T17:39:46.195Z] > authorizing via signed-in user (drew.robert.smith@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2023-04-10T17:39:46.599Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-04-10T17:39:46.599Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2023-04-10T17:39:46.603Z] [hub] writing locator at /var/folders/ll/crjh9qg9233gl9c9vj17l5kh0000gn/T/hub-mealstogo-eb46a.json
+[debug] [2023-04-10T17:39:46.865Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-04-10T17:39:46.865Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-04-10T17:39:46.865Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
+[debug] [2023-04-10T17:39:46.867Z] defaultcredentials: writing to file /Users/drewsmith/.config/firebase/drew_robert.smith_gmail.com_application_default_credentials.json
+[debug] [2023-04-10T17:39:46.871Z] Setting GAC to /Users/drewsmith/.config/firebase/drew_robert.smith_gmail.com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/drewsmith/.config/firebase/drew_robert.smith_gmail.com_application_default_credentials.json"}}
+[debug] [2023-04-10T17:39:46.872Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-eb46a/adminSdkConfig [none]
+[debug] [2023-04-10T17:39:47.025Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-eb46a/adminSdkConfig 200
+[debug] [2023-04-10T17:39:47.025Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/mealstogo-eb46a/adminSdkConfig {"projectId":"mealstogo-eb46a","storageBucket":"mealstogo-eb46a.appspot.com"}
+[info] i  ui: downloading ui-v1.11.5.zip... {"metadata":{"emulator":{"name":"ui"},"message":"downloading ui-v1.11.5.zip..."}}
+[debug] [2023-04-10T17:39:47.050Z] >>> [apiv2][query] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.11.5.zip 
+[debug] [2023-04-10T17:39:47.250Z] <<< [apiv2][status] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.11.5.zip 200
+[debug] [2023-04-10T17:39:47.251Z] <<< [apiv2][body] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.11.5.zip [stream]
+[debug] [2023-04-10T17:39:49.403Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-04-10T17:39:49.403Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-04-10T17:39:49.403Z] Starting Emulator UI with command {"binary":"node","args":["/Users/drewsmith/.cache/firebase/emulators/ui-v1.11.5/server/server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/Users/drewsmith/.cache/firebase/emulators/ui-v1.11.5/server/server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2023-04-10T17:39:49.482Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2023-04-10T17:39:49.483Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "/Users/drewsmith/Documents/Learn React/MealsToGo/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/drewsmith/Documents/Learn React/MealsToGo/functions\" for Cloud Functions..."}}
+[debug] [2023-04-10T17:39:49.676Z] Validating nodejs source
+[debug] [2023-04-10T17:39:49.982Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.0.0"
+  },
+  "private": true
+}
+[debug] [2023-04-10T17:39:49.982Z] Building nodejs source
+[debug] [2023-04-10T17:39:49.982Z] Failed to find version of module node: reached end of search path /Users/drewsmith/Documents/Learn React/MealsToGo/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[debug] [2023-04-10T17:39:49.983Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-04-10T17:39:49.986Z] Found firebase-functions binary at '/Users/drewsmith/Documents/Learn React/MealsToGo/functions/node_modules/.bin/firebase-functions'
+[debug] [2023-04-10T17:39:50.135Z] Serving at port 8947
+
+[debug] [2023-04-10T17:39:50.228Z] Got response from /__/functions.yaml {"endpoints":{},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-04-10T17:39:50.230Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: . {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: ."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2023-04-10T17:41:26.258Z] File /Users/drewsmith/Documents/Learn React/MealsToGo/functions/index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/drewsmith/Documents/Learn React/MealsToGo/functions/index.js changed, reloading triggers"}}
+[debug] [2023-04-10T17:41:27.261Z] Validating nodejs source
+[debug] [2023-04-10T17:41:27.579Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.0.0"
+  },
+  "private": true
+}
+[debug] [2023-04-10T17:41:27.579Z] Building nodejs source
+[debug] [2023-04-10T17:41:27.580Z] Failed to find version of module node: reached end of search path /Users/drewsmith/Documents/Learn React/MealsToGo/functions/node_modules
+[info] ✔  functions: Using node@18 from host. 
+[debug] [2023-04-10T17:41:27.580Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-04-10T17:41:27.581Z] Found firebase-functions binary at '/Users/drewsmith/Documents/Learn React/MealsToGo/functions/node_modules/.bin/firebase-functions'
+[debug] [2023-04-10T17:41:27.670Z] Serving at port 8901
+
+[debug] [2023-04-10T17:41:27.764Z] Got response from /__/functions.yaml {"endpoints":{"helloWorld":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"helloWorld"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-04-10T17:41:27.766Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: helloWorld. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: helloWorld."}}
+[info] ✔  functions[us-central1-helloWorld]: http function initialized (http://127.0.0.1:5001/mealstogo-eb46a/us-central1/helloWorld). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/mealstogo-eb46a/us-central1/helloWorld)."}}
+[debug] [2023-04-10T17:42:50.374Z] [work-queue] {"queuedWork":["/mealstogo-eb46a/us-central1/helloWorld-2023-04-10T17:42:50.374Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2023-04-10T17:42:50.375Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/mealstogo-eb46a/us-central1/helloWorld-2023-04-10T17:42:50.374Z"],"workRunningCount":1}
+[debug] [2023-04-10T17:42:50.375Z] Accepted request GET /mealstogo-eb46a/us-central1/helloWorld --> us-central1-helloWorld
+[debug] [2023-04-10T17:42:50.380Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2023-04-10T17:42:50.381Z] [functions] Got req.url=/mealstogo-eb46a/us-central1/helloWorld, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/mealstogo-eb46a/us-central1/helloWorld, mapping to path=/"}}
+[debug] [2023-04-10T17:42:50.385Z] [worker-pool] addWorker(us-central1-helloWorld) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-helloWorld)"}}
+[debug] [2023-04-10T17:42:50.385Z] [worker-pool] Adding worker with key us-central1-helloWorld, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-helloWorld, total=1"}}
+[debug] [2023-04-10T17:42:50.919Z] [runtime-status] [16338] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.6.0","resolution":"/Users/drewsmith/Documents/Learn React/MealsToGo/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [16338] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.6.0\",\"resolution\":\"/Users/drewsmith/Documents/Learn React/MealsToGo/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2023-04-10T17:42:50.919Z] [runtime-status] [16338] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.2.1","resolution":"/Users/drewsmith/Documents/Learn React/MealsToGo/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [16338] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/Users/drewsmith/Documents/Learn React/MealsToGo/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-04-10T17:42:50.919Z] [runtime-status] [16338] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [16338] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2023-04-10T17:42:50.920Z] [runtime-status] [16338] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.2.1","resolution":"/Users/drewsmith/Documents/Learn React/MealsToGo/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [16338] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/Users/drewsmith/Documents/Learn React/MealsToGo/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-04-10T17:42:51.001Z] [runtime-status] [16338] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [16338] Checked functions.config() {\"config\":{}}"}}
+[debug] [2023-04-10T17:42:51.001Z] [runtime-status] [16338] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"4.2.1","resolution":"/Users/drewsmith/Documents/Learn React/MealsToGo/functions/node_modules/firebase-functions/lib/v1/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [16338] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/Users/drewsmith/Documents/Learn React/MealsToGo/functions/node_modules/firebase-functions/lib/v1/index.js\"}}"}}
+[debug] [2023-04-10T17:42:51.001Z] [runtime-status] [16338] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.2.1","resolution":"/Users/drewsmith/Documents/Learn React/MealsToGo/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [16338] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/Users/drewsmith/Documents/Learn React/MealsToGo/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-04-10T17:42:51.001Z] [runtime-status] [16338] Resolved module firebase-admin {"declared":true,"installed":true,"version":"11.6.0","resolution":"/Users/drewsmith/Documents/Learn React/MealsToGo/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [16338] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"11.6.0\",\"resolution\":\"/Users/drewsmith/Documents/Learn React/MealsToGo/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2023-04-10T17:42:51.002Z] [runtime-status] [16338] Resolved module firebase-functions {"declared":true,"installed":true,"version":"4.2.1","resolution":"/Users/drewsmith/Documents/Learn React/MealsToGo/functions/node_modules/firebase-functions/lib/v1/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [16338] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"4.2.1\",\"resolution\":\"/Users/drewsmith/Documents/Learn React/MealsToGo/functions/node_modules/firebase-functions/lib/v1/index.js\"}"}}
+[debug] [2023-04-10T17:42:51.002Z] [runtime-status] [16338] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"11.6.0","resolution":"/Users/drewsmith/Documents/Learn React/MealsToGo/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [16338] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"11.6.0\",\"resolution\":\"/Users/drewsmith/Documents/Learn React/MealsToGo/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2023-04-10T17:42:51.005Z] [runtime-status] [16338] Functions runtime initialized. {"cwd":"/Users/drewsmith/Documents/Learn React/MealsToGo/functions","node_version":"18.13.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [16338] Functions runtime initialized. {\"cwd\":\"/Users/drewsmith/Documents/Learn React/MealsToGo/functions\",\"node_version\":\"18.13.0\"}"}}
+[debug] [2023-04-10T17:42:51.005Z] [runtime-status] [16338] Listening to port: /var/folders/ll/crjh9qg9233gl9c9vj17l5kh0000gn/T/fire_emu_6fcc5d5ca60467ef.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[runtime-status] [16338] Listening to port: /var/folders/ll/crjh9qg9233gl9c9vj17l5kh0000gn/T/fire_emu_6fcc5d5ca60467ef.sock"}}
+[debug] [2023-04-10T17:42:51.100Z] [worker-us-central1-helloWorld-a4240a41-e4e3-4c61-ad92-285f4c96ff48]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[worker-us-central1-helloWorld-a4240a41-e4e3-4c61-ad92-285f4c96ff48]: IDLE"}}
+[debug] [2023-04-10T17:42:51.100Z] [worker-pool] submitRequest(triggerId=us-central1-helloWorld) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-helloWorld)"}}
+[info] i  functions: Beginning execution of "us-central1-helloWorld" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"Beginning execution of \"us-central1-helloWorld\""}}
+[debug] [2023-04-10T17:42:51.101Z] [worker-us-central1-helloWorld-a4240a41-e4e3-4c61-ad92-285f4c96ff48]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[worker-us-central1-helloWorld-a4240a41-e4e3-4c61-ad92-285f4c96ff48]: BUSY"}}
+[info] >  {"structuredData":true,"severity":"INFO","message":"Hello logs!"} {"user":{"structuredData":true,"severity":"INFO","message":"Hello logs!"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"\u001b[90m> \u001b[39m {\"structuredData\":true,\"severity\":\"INFO\",\"message\":\"Hello logs!\"}"}}
+[info] i  functions: Finished "us-central1-helloWorld" in 3.315417ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"Finished \"us-central1-helloWorld\" in 3.315417ms"}}
+[debug] [2023-04-10T17:42:51.104Z] [worker-us-central1-helloWorld-a4240a41-e4e3-4c61-ad92-285f4c96ff48]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-helloWorld"},"extension":{},"message":"[worker-us-central1-helloWorld-a4240a41-e4e3-4c61-ad92-285f4c96ff48]: IDLE"}}
+[debug] [2023-04-10T17:42:51.104Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2023-04-10T17:42:51.224Z] Functions emulator received unknown request at path /favicon.ico
