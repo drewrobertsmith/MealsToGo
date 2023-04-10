@@ -24,12 +24,6 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
-      },
-      "package": "com.mediated_reality.MealsToGo"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "f0f40020-1f07-4456-9caf-a66b33533fa9"
       }
     }
   }
